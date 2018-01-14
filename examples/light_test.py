@@ -12,7 +12,7 @@
 
 from gpiozero import Button, LED
 
-from signal import pause
+from time import sleep
 
 # setup pins
 # All Pin Numbers are Broadcom PIN
@@ -47,14 +47,41 @@ selection_8_led    = LED(10)
 # setup complete
 
 # main'ish:
-power_led.source = power_button.values
-selection_1_led.source = selection_1_button.values
-selection_2_led.source = selection_2_button.values
-selection_3_led.source = selection_3_button.values
-selection_4_led.source = selection_4_button.values
-selection_5_led.source = selection_5_button.values
-selection_6_led.source = selection_6_button.values
-selection_7_led.source = selection_7_button.values
-selection_8_led.source = selection_8_button.values
+sleep_delay_s = 0.5
+while(True):
+    power_led.on()
+    sleep(sleep_delay_s)
+    power_led.off()
 
-pause()
+    selection_1_led.on()
+    sleep(sleep_delay_s)
+    selection_1_led.off()
+
+    selection_2_led.on()
+    sleep(sleep_delay_s)
+    selection_2_led.off()
+
+    selection_3_led.on()
+    sleep(sleep_delay_s)
+    selection_3_led.off()
+
+    selection_4_led.on()
+    sleep(sleep_delay_s)
+    selection_4_led.off()
+
+    selection_5_led.on()
+    sleep(sleep_delay_s)
+    selection_5_led.off()
+
+    selection_6_led.on()
+    sleep(sleep_delay_s)
+    selection_6_led.off()
+
+    selection_7_led.on()
+    sleep(sleep_delay_s)
+    selection_7_led.off()
+
+    selection_8_led.on()
+    sleep(sleep_delay_s)
+    selection_8_led.off()
+
