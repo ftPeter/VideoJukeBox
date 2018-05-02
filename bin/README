@@ -1,0 +1,3 @@
+
+shutdown-button and button_light_keyboard are run on boot. 
+for details: sudo vim /etc/rc.local
