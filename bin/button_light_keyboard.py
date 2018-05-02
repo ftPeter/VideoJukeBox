@@ -44,6 +44,9 @@ selection_7_led    = LED(20)
 selection_8_button = Button(27)
 selection_8_led    = LED(10)
 
+coin_a_button = Button(5)
+coin_b_button = Button(7)
+
 device = uinput.Device([uinput.KEY_1,
                         uinput.KEY_2,
                         uinput.KEY_3,
@@ -51,6 +54,7 @@ device = uinput.Device([uinput.KEY_1,
                         uinput.KEY_5,
                         uinput.KEY_R,
                         uinput.KEY_S,
+                        uinput.KEY_C,
                         ])
 
 # setup complete
@@ -83,6 +87,9 @@ def button_S_pressed():
     device.emit_click(uinput.KEY_S)
     return
 
+def button_C_released():
+    device.emit_click(uinput.KEY_C)
+
 # main'ish:
 selection_1_button.when_pressed = button_1_pressed
 selection_2_button.when_pressed = button_2_pressed
@@ -91,6 +98,8 @@ selection_4_button.when_pressed = button_4_pressed
 selection_5_button.when_pressed = button_5_pressed
 selection_6_button.when_pressed = button_R_pressed
 selection_7_button.when_pressed = button_S_pressed
+coin_a_button.when_released = button_c_released
+coin_b_button.when_released = button_c_released
 
 selection_1_led.source = selection_1_button.values
 selection_2_led.source = selection_2_button.values
